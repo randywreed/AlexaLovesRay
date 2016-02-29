@@ -37,7 +37,10 @@ def buildDailyForecast(place):
             #print strBase
             weekd=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
             if strBase in weekd:
-                strForecast=strForecast+" Forecast for "+strBase+". "
+                if strForecast=="":
+                    strForecast="Forecast for "+strBase+". "
+                else:
+                    strForecast=strForecast+" Forecast for "+strBase+". "
             elif strBase[:2]=="Hi":
                 strBase=strBase.replace("\n","")
                 strForecast=strForecast+"Temperatures: "+strBase+". "
